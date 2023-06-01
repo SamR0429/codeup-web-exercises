@@ -60,10 +60,6 @@ var random = Math.floor((Math.random() * 3) + 1);
 //return number ===2;
 //}
 //isTwo(random)
-
-
-
-
 function isTwo(num){
     let isNumberTwo = (num===2);
     return isNumberTwo;
