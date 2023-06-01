@@ -1,0 +1,32 @@
+isNaN(0)
+false
+isNaN(1)
+false
+isNaN("")
+false
+isNaN("string")
+true
+!!0
+false
+!!"0"
+true
+let sample = "Hello Codeup";
+undefined
+sample.length
+12
+sample.toUpperCase
+ƒ toUpperCase() { [native code] }
+sample.toUpperCase()
+'HELLO CODEUP'
+sample + ' students'
+'Hello Codeup students'
+sample + ' class'
+'Hello Codeup class'
+sample.indexOf()
+-1
+sample.indexOf("c")
+-1
+sample.indexOf("C")
+6
+sample.substring(6)
+'Codeup'
