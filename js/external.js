@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<script>
+
     console.log("Hello from external JavaScript");
     alert("Welcome to my Website!");
     let userInput = prompt("Enter your favorite color!");
@@ -55,6 +48,3 @@ alert(totalPayment)
 
     let productDiscountApplied = offerIsValid && (isPremiumMember || numberOfItems > 2);
 
-    </script>
-</body>
-</html>
