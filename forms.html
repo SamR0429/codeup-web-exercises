@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Register with us</title>
 </head>
 <body>
-$END$
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <fieldset>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text">
+        <br>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+        <br>
+    </fieldset>
+    <fieldset>
+        <textarea rows="5" cols="40" name="bio" spellcheck="true">Enter a bio about yourself</textarea>
+        <br>
+    </fieldset>
+    <fieldset>
+        <p>How'd your hear about us?</p>
+
+        <input type="radio" id="billboard" name="how'd you hear about us?" value="billboard">
+        <label>A billboard</label>
+        <br>
+        <input type="radio" id="internet" name="how'd you hear about us?" value="internet">
+        <label>The internet</label>
+        <br>
+        <input type="radio" id="ad" name="how'd you hear about us?" value="ad">
+        <label>An add</label>
+        <br>
+        <input type="radio" id="radio" name="how'd you hear about us?" value="radio">
+        <label>The radio</label>
+        <br>
+        <input type="radio" id="other" name="how'd you hear about us?" value="other">
+        <label>Other</label>
+        <br>
+    </fieldset>
+    <fieldset>
+        <p>What web browser are you using?</p>
+        <select name="browser" id="browser">
+            <option value=""></option>
+            <option value="FireFox">FireFox</option>
+            <option value="Safari">Safari</option>
+            <option value="Google">Google</option>
+            <option value="Other">Other</option>
+        </select>
+    </fieldset>
+    <input type="submit">
+</form>
 </body>
 </html>

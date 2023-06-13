@@ -1,0 +1,8 @@
+:root{
+    --primary: #800080;
+}
+
+.fancy-header{
+    color: var(--primary);
+    text-decoration: underline;
+}
