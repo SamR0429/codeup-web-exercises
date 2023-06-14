@@ -1,0 +1,56 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+/*div {*/
+/*    width: 300px;*/
+/*    border: 1px solid grey;*/
+/*    padding: 10px;*/
+/*    margin: 10px;*/
+/*    border-radius: 8px;*/
+/*}*/
+/*.btn{*/
+/*    background-color: dodgerblue;*/
+/*    color: dodgerblue;*/
+/*}*/
+/*.btn{*/
+/*    background-color: lightgreen;*/
+/*    color: lightgreen;*/
+/*}*/
+/*.btn{*/
+/*    background-color: palegoldenrod;*/
+/*    color: palegoldenrod;*/
+/*}*/
+/*.btn{*/
+/*    background-color: palevioletred;*/
+/*    color: palevioletred;*/
+/*}*/
+/* you were close with yours you just needed the names right*/
+
+.message {
+    background-color: lightgrey;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.message-info{
+     background-color: ;
+     color:;
+ }
+.message-success{
+    background-color: ;
+    color:;
+}
+.message-warning{
+    background-color: ;
+    color:;
+}
+
+.message-error{
+    background-color: ;
+    color:;
+}

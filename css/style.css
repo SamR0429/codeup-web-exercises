@@ -1,8 +1,68 @@
+@font-face {
+    font-family: "playfair-display";
+    src: url('fonts/PlayfairDisplay-VariableFont_wght.ttf');
+}
+
 :root{
     --primary: #800080;
 }
 
+body{
+    font-size: 12px;
+    background-color: lightblue;
+
+    /*background-image: ;*/
+    /*background-image: url("https://www.freepik.com/premium-vector/light-blue-geometric-background_1353950.htm");*/
+}
+*{box-sizing: border-box;
+}
+
+h2{
+    text-transform: uppercase;
+    color: #00008b;
+    text-decoration: underline;
+
+}
+#hero  h2{
+    text-transform: lowercase;
+}
 .fancy-header{
     color: var(--primary);
     text-decoration: underline;
+    text-align: center;
+}
+h2.fancy-header{
+    font-style: unset;
+}
+ul{
+    list-style: lower-roman;
+}
+/*#hero{*/
+/*    background-color:#add8e6;*/
+/*}*/
+
+/*.background-color{*/
+/*    color: lightblue;*/
+/*}*/
+
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+th,td{
+     border: 1px solid black;
+    padding: 3px;
+ }
+thead th{
+    width: 30%;
+
+}
+thead{
+    background-color: #333;
+    color: #fff;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
