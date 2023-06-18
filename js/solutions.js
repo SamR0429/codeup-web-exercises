@@ -42,20 +42,36 @@
 // console.log(not(Infinity));                     // false
 // console.log(not(123));                    // false
 
-function addOne(input){
-    if(input === "string" || "number"){
-        return true
-    }else
-        return false
+// function addOne(input){
+//     if(input === "string" || "number"){
+//         return true
+//     }else
+//         return false
+// }
+//
+// console.log(addOne(0));                    // 1
+// console.log(addOne(2));                    // 3
+// console.log(addOne(-5));                   // -4
+// console.log(addOne(5.789));                // 6.789
+// console.log(addOne(Infinity));                  // Infinity
+// console.log(addOne("2"));                  // 3
+// console.log(addOne("0"));                  // 1
+// console.log(addOne("banana"));             // NaN
+// console.log(addOne(true));                 // NaN
+// console.log(addOne(NaN));                       // NaN
+
+
+function isNegative(num) {
+    if (Math.sign(num) === -1) {
+        return true;
+    }
+
+    return false;
 }
 
-console.log(addOne(0));                    // 1
-console.log(addOne(2));                    // 3
-console.log(addOne(-5));                   // -4
-console.log(addOne(5.789));                // 6.789
-console.log(addOne(Infinity));                  // Infinity
-console.log(addOne("2"));                  // 3
-console.log(addOne("0"));                  // 1
-console.log(addOne("banana"));             // NaN
-console.log(addOne(true));                 // NaN
-console.log(addOne(NaN));                       // NaN
+console.log(isNegative(-5)); // 👉️ true
+console.log(isNegative(5)); // 👉️ false
+console.log(isNegative('-5')); // 👉️ true
+console.log(isNegative('test')); // 👉️ false
+
+
