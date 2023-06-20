@@ -5,30 +5,30 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
-/*div {*/
-/*    width: 300px;*/
-/*    border: 1px solid grey;*/
-/*    padding: 10px;*/
-/*    margin: 10px;*/
-/*    border-radius: 8px;*/
-/*}*/
-/*.btn{*/
-/*    background-color: dodgerblue;*/
-/*    color: dodgerblue;*/
-/*}*/
-/*.btn{*/
-/*    background-color: lightgreen;*/
-/*    color: lightgreen;*/
-/*}*/
-/*.btn{*/
-/*    background-color: palegoldenrod;*/
-/*    color: palegoldenrod;*/
-/*}*/
-/*.btn{*/
-/*    background-color: palevioletred;*/
-/*    color: palevioletred;*/
-/*}*/
-/* you were close with yours you just needed the names right*/
+div {
+    width: 300px;
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+}
+.btn{
+    background-color: dodgerblue;
+    color: dodgerblue;
+}
+.btn{
+    background-color: lightgreen;
+    color: lightgreen;
+}
+.btn{
+    background-color: palegoldenrod;
+    color: palegoldenrod;
+}
+.btn{
+    background-color: palevioletred;
+    color: palevioletred;
+}
+ /*you were close with yours you just needed the names right*/
 
 /*.message {*/
 /*    background-color: lightgrey;*/

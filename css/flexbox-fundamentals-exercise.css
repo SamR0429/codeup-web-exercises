@@ -7,16 +7,24 @@ body {
     font-family: Chalkboard, sans-serif;
 }
 
-h1 {text-align: center;}
+h1 {
+    text-align: center;
+    color: #000000;
+}
+
 
 h2, h3 {
     padding: 0;
     margin: 0;
+    color: black;
 }
 
 .container {
     margin: 0 auto;
     width: 80%;
+    display: flex; /*you added this*/
+    flex-direction: row; /* you added this*/
+    
 }
 
 .green-box {
@@ -91,6 +99,8 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
+
+
 }
 
 .large-brown-box:nth-of-type(2) {
