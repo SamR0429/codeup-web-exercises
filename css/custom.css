@@ -1,0 +1,10 @@
+.container-fluid.sr-hero{
+    min-height: 30vh;
+    background-image: url("../img/6776_Pizza-Dough_ddmfs_2x1_1725-fdaa76496da045b3bdaadcec6d4c5398.jpg");
+    /*background-position: center center;*/
+    /*background-size: cover;*/
+}
+.bg-opacity-75 {
+    --bs-bg-opacity: 0.75;
+}
+
