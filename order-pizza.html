@@ -55,7 +55,7 @@
 <!-- this is the tabs for making your pizza-->
 <div class="container">
     <div class="row">
-        <div class="column">
+        <form id="pizzaForm" class="column" method="post" action="https://request-inspector.glitch.me">
             <h1>Build your own pizza!</h1>
             <!-- building of the tabs-->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -92,9 +92,7 @@
                     </button>
                 </li>
             </ul>
-      <!--ask if this div should be here to close off tabs </div> -->
-
-            <!-- wont let input be put on console <form action="order-pizza.html" method="post"> -->
+            <!--ask if this div should be here to close off tabs </div> -->
 
 
             <!-- content within tabs-->
@@ -104,8 +102,6 @@
                 <div class="tab-pane fade active show" id="size-crust-tab-pane" role="tabpanel"
                      aria-labelledby="size-crust-tab"
                      tabindex="0">
-
-
 
                     <div class="card">
                         <div class="card-header text-light bg-primary">
@@ -121,8 +117,9 @@
                                     <li class="list-group-item">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="size"
-                                                   id="Small (10')">
-                                            <label class="form-check-label" for="Small (10')">
+                                                   value="Hand-Tossed-Small"
+                                                   id="Hand-Tossed-Small">
+                                            <label class="form-check-label" for="Hand-Tossed-Small">
                                                 Small (10")
                                             </label>
                                         </div>
@@ -130,8 +127,9 @@
                                     <li class="list-group-item">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="size"
-                                                   id="Hand-tossed-Medium (12')" checked>
-                                            <label class="form-check-label" for="Hand-tossed-Medium (12')">
+                                                   value="Hand-Tossed-Medium"
+                                                   id="Hand-tossed-Medium">
+                                            <label class="form-check-label" for="Hand-tossed-Medium">
                                                 Medium (12")
                                             </label>
                                         </div>
@@ -148,8 +146,9 @@
                                     <li class="list-group-item">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="size"
-                                                   id="Crispy-thin-Medium (12')">
-                                            <label class="form-check-label" for="Crispy-thin-Medium (12')">
+                                                   value="Crispy-thin-Medium"
+                                                   id="Crispy-thin-Medium">
+                                            <label class="form-check-label" for="Crispy-thin-Medium">
                                                 Medium (12')
                                             </label>
                                         </div>
@@ -157,8 +156,9 @@
                                     <li class="list-group-item">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="size"
-                                                   id="Crispy-thin-Large(14')" checked>
-                                            <label class="form-check-label" for="Crispy-thin-Large(14')">
+                                                   value="Crispy-thin-Large"
+                                                   id="Crispy-thin-Large">
+                                            <label class="form-check-label" for="Crispy-thin-Large">
                                                 Large (14")
                                             </label>
                                         </div>
@@ -173,7 +173,7 @@
                 </div>
 
                 <!-- cheese and sauce tab-->
-                <div class="tab-pane fade active show" id="cheese-sauce-tab-pane" role="tabpanel"
+                <div class="tab-pane fade" id="cheese-sauce-tab-pane" role="tabpanel"
                      aria-labelledby="cheese-sauce-tab"
                      tabindex="0">
 
@@ -190,19 +190,17 @@
                                     <li class="list-group-item">How much?</li>
                                     <li class="list-group-item">
                                         <div class="dropdown">
-                                            <button class="btn btn-light dropdown-toggle w-100 text-start" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                Choose
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Light</a></li>
-                                                <li><a class="dropdown-item" href="#">Normal</a></li>
-                                                <li><a class="dropdown-item" href="#">Extra</a></li>
-                                                <li><a class="dropdown-item" href="#">Double</a></li>
-                                            </ul>
+                                            <label for="cheese"></label>
+                                            <select id="cheese" name="cheese">
+                                                <option>Light</option>
+                                                <option>Normal</option>
+                                                <option>Extra</option>
+                                                <option>Double</option>
+                                            </select>
                                         </div>
                                     </li>
                                 </ul>
+
                             </div>
                             <br>
                             <div class="card">
@@ -213,30 +211,25 @@
                                     <li class="list-group-item">What type?</li>
                                     <li class="list-group-item">
                                         <div class="dropdown">
-                                            <button class="btn btn-light dropdown-toggle w-100 text-start" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                Choose
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Tomato</a></li>
-                                                <li><a class="dropdown-item" href="#">BBQ</a></li>
-                                                <li><a class="dropdown-item" href="#">Marinara</a></li>
-                                                <li><a class="dropdown-item" href="#">Alfredo</a></li>
-                                            </ul>
+                                            <label for="sauce"></label>
+                                            <select id="sauce" name="sauce">
+                                                <option>Tomato</option>
+                                                <option>Normal</option>
+                                                <option>Marinara</option>
+                                                <option>BBQ</option>
+                                                <option>Alfredo</option>
+                                            </select>
                                         </div>
                                     </li>
                                     <li class="list-group-item">How much?</li>
                                     <li class="list-group-item">
                                         <div class="dropdown">
-                                            <button class="btn btn-light dropdown-toggle w-100 text-start" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                Choose
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Light</a></li>
-                                                <li><a class="dropdown-item" href="#">Normal</a></li>
-                                                <li><a class="dropdown-item" href="#">Extra</a></li>
-                                            </ul>
+                                            <label for="how-much"></label>
+                                            <select id="how-much" name="how-much">
+                                                <option>Light</option>
+                                                <option>Normal</option>
+                                                <option>Extra</option>
+                                            </select>
                                         </div>
                                     </li>
                                 </ul>
@@ -257,7 +250,7 @@
                 </div>
 
                 <!-- choose toppings tab-->
-                <div class="tab-pane fade active show" id="toppings-tab-pane" role="tabpanel"
+                <div class="tab-pane fade" id="toppings-tab-pane" role="tabpanel"
                      aria-labelledby="toppings-tab-pane"
                      tabindex="0">
 
@@ -274,7 +267,7 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Beef"
+                                            <input class="form-check-input" type="checkbox" name="meats[]" value="Beef"
                                                    id="Beef">
                                             <label class="form-check-label" for="Beef">
                                                 Beef
@@ -283,7 +276,7 @@
                                     </li>
                                     <li class="list-group-item">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Ham"
+                                            <input class="form-check-input" type="checkbox" name="meats[]" value="Ham"
                                                    id="Ham">
                                             <label class="form-check-label" for="Ham">
                                                 Ham
@@ -292,8 +285,9 @@
                                     </li>
                                     <li class="list-group-item">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Philly Steak"
-                                                   id="Philly Steak" checked>
+                                            <input class="form-check-input" type="checkbox" name="meats[]"
+                                                   value="Philly Steak"
+                                                   id="Philly Steak">
                                             <label class="form-check-label" for="Philly Steak">
                                                 Philly Steak
                                             </label>
@@ -301,7 +295,7 @@
                                     </li>
                                     <li class="list-group-item">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Bacon"
+                                            <input class="form-check-input" type="checkbox" name="meats[]" value="Bacon"
                                                    id="Bacon">
                                             <label class="form-check-label" for="Bacon">
                                                 Bacon
@@ -318,8 +312,9 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Green Peppers"
-                                                   id="Green Peppers" checked>
+                                            <input class="form-check-input" type="checkbox" name="veggies[]"
+                                                   value="Green Peppers"
+                                                   id="Green Peppers">
                                             <label class="form-check-label" for="Green Peppers">
                                                 Green Peppers
                                             </label>
@@ -327,7 +322,8 @@
                                     </li>
                                     <li class="list-group-item">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Mushrooms"
+                                            <input class="form-check-input" type="checkbox" name="veggies[]"
+                                                   value="Mushrooms"
                                                    id="Mushrooms">
                                             <label class="form-check-label" for="Mushrooms">
                                                 Mushrooms
@@ -336,8 +332,9 @@
                                     </li>
                                     <li class="list-group-item">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Onions"
-                                                   id="Onions" checked>
+                                            <input class="form-check-input" type="checkbox" name="veggies[]"
+                                                   value="Onions"
+                                                   id="Onions">
                                             <label class="form-check-label" for="Onions">
                                                 Onions
                                             </label>
@@ -345,9 +342,10 @@
                                     </li>
                                     <li class="list-group-item">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                   id="flexCheckDefault8">
-                                            <label class="form-check-label" for="flexCheckDefault8">
+                                            <input class="form-check-input" type="checkbox" name="veggies[]"
+                                                   value="Jalapeno"
+                                                   id="Jalapeno">
+                                            <label class="form-check-label" for="Jalapeno">
                                                 Jalapeno Peppers
                                             </label>
                                         </div>
@@ -358,16 +356,15 @@
 
 
                             <!-- button on toppings tab-->
-                            <a href="#" class="btn btn-primary">Checkout
+                            <button type="submit" class="btn btn-primary">Checkout
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-cart-fill" viewBox="0 0 16 16">
                                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                 </svg>
-                            </a>
+                            </button>
 
 
                         </div>
-
 
                     </div>
 
@@ -375,19 +372,26 @@
 
             </div>
 
-        <!-- this form needs to be here cause if it isnt it gets griped at </form> -->
-
-        </div>
+        </form>
 
     </div>
-
-    <!-- ask if this should be at after the tabs end or here -->
 </div>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+
+<!--<script>-->
+<!--    const myForm = document.querySelector('#pizzaForm');-->
+<!--    document.querySelectorAll('input').forEach(function(input){-->
+<!--       input.addEventListener('change', function(){-->
+<!--           let myFormData = new FormData(myForm);-->
+<!--           let data = Object.fromEntries(myFormData.entries())-->
+<!--           console.log(data);-->
+<!--       });-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>
