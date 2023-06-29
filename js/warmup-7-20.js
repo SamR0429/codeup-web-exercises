@@ -43,28 +43,28 @@
 //
 //     EXAMPLE...
 
-const salesData = [
-    {
-        month: 'January',
-        totalItemsSold: 0
-    },
-    {
-        month: 'February',
-        totalItemsSold: 5
-    },
-    {
-        month: 'March',
-        totalItemsSold: 2
-    },
-    {
-        month: 'April',
-        totalItemsSold: 10
-    },
-    {
-        month: 'May',
-        totalItemsSold: 30
-    }
-];
+// const salesData = [
+//     {
+//         month: 'January',
+//         totalItemsSold: 0
+//     },
+//     {
+//         month: 'February',
+//         totalItemsSold: 5
+//     },
+//     {
+//         month: 'March',
+//         totalItemsSold: 2
+//     },
+//     {
+//         month: 'April',
+//         totalItemsSold: 10
+//     },
+//     {
+//         month: 'May',
+//         totalItemsSold: 30
+//     }
+// ];
 
 // function returnTotalSales(sales) {
 //     let returnTotalSales = 0
@@ -76,7 +76,113 @@ const salesData = [
 // console.log(returnTotalSales(salesData));
 // YOU COULDNT DO IT CAUSE IT WAS INSIDE AN ARRAY !!!! PAY CLOSE ATTENTION
 
-const total = salesData[0].totalItemsSold + salesData[1].totalItemsSold /* etc etc  till finish */
+// const total = salesData[0].totalItemsSold + salesData[1].totalItemsSold /* etc etc  till finish */
+//
+//
+// console.log(salesData[0].totalItemsSold);
 
+//june 27
+// Create a function, returnAvgSales, that takes in an array of sales data objects and returns the average of all
+// total items sold. Assume all elements in the input array are valid sales data objects with a totalItemsSold
+// property. If the array is empty, return 0. If the array has one element, return the value of the totalItemsSold.
+//
+//     EXAMPLE...
 
-console.log(salesData[0].totalItemsSold);
+// const salesData = [
+//     {
+//         month: 'January',
+//         totalItemsSold: 0
+//     },
+//     {
+//         month: 'February',
+//         totalItemsSold: 5
+//     },
+//     {
+//         month: 'March',
+//         totalItemsSold: 2
+//     },
+//     {
+//         month: 'April',
+//         totalItemsSold: 10
+//     },
+//     {
+//         month: 'May',
+//         totalItemsSold: 30
+//     }
+// ];
+//
+// function returnAvgSales(salesData) {
+//     let total = 0;
+//
+//     salesData.forEach(salesDataObj => {
+//         total += salesDataObj.totalItemsSold;
+//
+//     });
+    // return total/ salesData.length
+// returnAvgSales(salesData) // returns 9.4
+
+//june 28
+// Create a function, returnAdmins, that takes in an array of user objects
+// and returns an array of only the admin user objects. Assume the array
+// has at least one user object and all elements have an isAdmin property.
+    // Example:
+// const users = [
+//
+//     {
+//         username: 'fred123',
+//         password: 'letmein',
+//         email: 'fred123@email.com',
+//         isAdmin: true
+//     },
+//     {
+//         username: 'cindy123',
+//         password: 'hello123',
+//         email: 'cindy123@email.com',
+//         isAdmin: false
+//     },
+//     {
+//         username: 'kathy123',
+//         password: 'letmein',
+//         email: 'kathy123@email.com',
+//         isAdmin: true
+//     },
+//     {
+//         username: 'kyle123',
+//         password: 'letmein',
+//         email: 'kyle123@email.com',
+//         isAdmin: false
+//     }
+// ]
+// function returnAdmins(users){
+//     const admins = [];
+//
+//     for(let user of users){
+//         if(user.isAdmin === true){
+//             admins.push(user)
+//         }
+//     }
+//     return admins;
+// }
+// console.log(returnAdmins(users));
+/*
+
+returnAdmins(users) returns...
+
+[
+
+    {
+        username: 'fred123',
+        password: 'letmein',
+        email: 'fred123@email.com',
+        isAdmin: true
+    },
+    {
+        username: 'kathy123',
+        password: 'letmein',
+        email: 'kathy123@email.com',
+        isAdmin: true
+    }
+]
+
+*/
+
