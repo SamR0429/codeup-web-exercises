@@ -186,3 +186,73 @@ returnAdmins(users) returns...
 
 */
 
+//june 29
+
+// Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable.
+// If the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
+// The function should return true if the neighborhood object is desirable and false otherwise.
+
+// example data...
+
+    const neighborhood1 = {
+    neighborhood: "Lovely Estates",
+    medianHomePrice: 280000,
+    pool: true,
+    tennis: false,
+    crimeRate: "low",
+    schools: 22
+};
+
+const neighborhood2 = {
+    neighborhood: "Luminous Estates",
+    medianHomePrice: 270000,
+    pool: true,
+    tennis: false,
+    crimeRate: "high",
+    schools: 24
+}
+
+const neighborhood3 = {
+    neighborhood: "Oak Mountain",
+    medianHomePrice: 290000,
+    pool: false,
+    tennis: false,
+    crimeRate: "low",
+    schools: 24
+}
+
+const neighborhood4 = {
+    neighborhood: "Ginormous Acres",
+    medianHomePrice: 350000,
+    pool: true,
+    tennis: true,
+    crimeRate: "low",
+    schools: 27
+}
+function bestNeighborhood(neighborhood) {
+    //     if (neighborhood1.medianHomePrice <= 30000) {
+    //         return true;
+    //     } else if (neighborhood1.crimeRate === "low") {
+    //         return true;
+    //     } else if (neighborhood1.schools >= 24) {
+    //         return true;
+    //     } else
+    //         return false;
+    // }
+    // you were on the right path, you know you needed those checkpoint for the neighborhoods, you also couldve just made one if statement and not have to do else if statements
+/////////////////////////////////////////////////////////////////////
+    // console.log(neighborhood.medianHomePrice);
+    // console.log(neighborhood.crimeRate);
+    // console.log(neighborhood.schools);
+    const isRightPrice = neighborhood.medianHomePrice < 300000;
+    const isRightCrimeRate = neighborhood.crimeRate === 'low';
+    const isRightSchoolRating = neighborhood.schools >=24;
+
+    const isDesirable = isRightPrice && isRightCrimeRate && isRightSchoolRating;
+    return isDesirable;
+}
+// bestNeighborhood(neighborhood1);
+console.log(bestNeighborhood(neighborhood1));
+console.log(bestNeighborhood(neighborhood2));
+console.log(bestNeighborhood(neighborhood3));
+console.log(bestNeighborhood(neighborhood4));

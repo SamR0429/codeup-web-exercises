@@ -314,6 +314,31 @@ function isANumber(input) {
 // console.log(concat(4, 2));                    // "42"
 // console.log(concat(true, true));              // "truetrue"
 
+//20.
+// function cubes(input) {
+//     return input ** 3
+// }
+// //this is multiplying your input by itself 3 times
+// console.log(cubes(3));
+// console.log(cubes(5));
+// console.log(cubes(10));
+
+//21.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
