@@ -25,43 +25,112 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+
+<button id="btn1">Click Main</button>
+<button id="btn2">test button</button>
+
+<!--
+
+    1. change main header
+    2. change sub-header
+    3. change list
+    4. change paragraph
+
+-->
+
+<button id="change-main-header-btn">Change Main Header</button>
+<button id="change-sub-header-btn">Change Sub-Header</button>
+<button id="change-list-btn">Change List</button>
+<button id="change-para-btn">Change Paragraph</button>
+
 <script>
-    (function() {
+    (function () {
         "use strict";
-        // TODO: Uncomment next line and get the main header element by id
-        // let mainHeader = document.body.querySelector('h1');
-        // mainHeader.style.color ='red';
+        //you took the functions from below and inserted them into these functions in order to have a reaction with the buttons
 
-        /* this one works too but they asked for you to select it by id, so you rewrote it to fit the to do */
-        ////////////////////////////////////////////////////////
+        // variables...
 
-        const mainHeader = document.getElementById('main-header');
-        mainHeader.style.color ='red';
+        const changeMainBtn = document.getElementById('change-main-header-btn');
+        const changeSubHeaderBtn = document.getElementById('change-sub-header-btn');
+        const changeListBtn = document.getElementById('change-list-btn');
+        const changeParaBtn = document.getElementById('change-para-btn');
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        // let mainHeader = document.body.querySelector('h1');
-        mainHeader.innerHTML ="JavaScript is Cool";
-        // TODO: Uncomment the next line and get the sub header element by id
-        const subHeader =document.getElementById('sub-header');
-        // TODO: Set the text color of subHeader to blue
-        subHeader.style.color ='blue';
-        // TODO: Uncomment the next line and get all list items
-        // const listItems = document.body.querySelectorAll('li') ;
-        // const listItems = document.getElementsByTagName('li'); //you could also do this
-        // TODO: Set text color on every other list item to grey
-        // const listItems = document.body.querySelector('ul');
 
-        for(let i = 0; i < listItems.length; i +=2){
-            listItems[1].style.color = 'lime'
+        // functions...
+
+        function changeMainHeader() {
+            const mainHeader = document.getElementById('main-header');
+            mainHeader.innerHTML = "JavaScript is Cool";
         }
-        // TODO: Set text color of li with dbid = 1 to blue
-        // let listItems = document.body.querySelector('li');
-        // listItems.style.color = 'blue';
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        const subParagraphs = document.getElementsByClassName('sub-header');
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-            subParagraphs[0].innertext = 'Mission Accomplished'
+
+        function changeSubHeader() {
+            const subHeader = document.getElementById('sub-header');
+            subHeader.style.color = 'blue';
+        }
+
+        function changeList() {
+            const listItems = document.getElementsByTagName("li");
+            for (let i = 0; i < listItems.length; i += 1) {
+                if (i % 2 === 0) {
+                    listItems[i].style.color = 'lime';
+                }
+            }
+            document.querySelector('[data-dbid="1"]').style.color = 'blue';
+        }
+
+        function changePara() {
+            const subParagraphs = document.getElementsByClassName('sub-paragraph');
+            subParagraphs[0].innerText = 'Mission Accomplished!';
+        }
+
+        // add event listeners...
+
+        changeMainBtn.addEventListener('click', changeMainHeader);
+        changeSubHeaderBtn.addEventListener('click', changeSubHeader);
+        changeListBtn.addEventListener('click', changeList);
+        changeParaBtn.addEventListener('click', changePara);
+
     })();
 </script>
+
+
+<!--<script>-->
+<!--    (function() {-->
+<!--        "use strict";-->
+<!--        // TODO: Uncomment next line and get the main header element by id-->
+<!--        // let mainHeader = document.body.querySelector('h1');-->
+<!--        // mainHeader.style.color ='red';-->
+
+<!--        /* this one works too but they asked for you to select it by id, so you rewrote it to fit the to do */-->
+<!--        ////////////////////////////////////////////////////////-->
+
+<!--        const mainHeader = document.getElementById('main-header');-->
+<!--        mainHeader.style.color ='red';-->
+
+<!--        // TODO: Set inner html of mainHeader to "JavaScript is Cool"-->
+<!--        // let mainHeader = document.body.querySelector('h1');-->
+<!--        mainHeader.innerHTML ="JavaScript is Cool";-->
+<!--        // TODO: Uncomment the next line and get the sub header element by id-->
+<!--        const subHeader =document.getElementById('sub-header');-->
+<!--        // TODO: Set the text color of subHeader to blue-->
+<!--        subHeader.style.color ='blue';-->
+<!--        // TODO: Uncomment the next line and get all list items-->
+<!--        // const listItems = document.body.querySelectorAll('li') ;-->
+<!--        // const listItems = document.getElementsByTagName('li'); //you could also do this-->
+<!--        // TODO: Set text color on every other list item to grey-->
+<!--        // const listItems = document.body.querySelector('ul');-->
+
+<!--        for(let i = 0; i < listItems.length; i +=2){-->
+<!--            listItems[1].style.color = 'lime'-->
+<!--        }-->
+<!--        // TODO: Set text color of li with dbid = 1 to blue-->
+<!--        // let listItems = document.body.querySelector('li');-->
+<!--        // listItems.style.color = 'blue';-->
+<!--        // TODO: Uncomment the next line and get all elements with class name sub-paragraph-->
+<!--        const subParagraphs = document.getElementsByClassName('sub-header');-->
+<!--        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"-->
+<!--            subParagraphs[0].innertext = 'Mission Accomplished'-->
+<!--    })();-->
+<!--</script>-->
 </body>
 </html>
