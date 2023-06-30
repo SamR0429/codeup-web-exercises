@@ -35,31 +35,32 @@
         /* this one works too but they asked for you to select it by id, so you rewrote it to fit the to do */
         ////////////////////////////////////////////////////////
 
-        let mainHeader = document.getElementById('main-header');
-        // mainHeader.style.color ='red';
+        const mainHeader = document.getElementById('main-header');
+        mainHeader.style.color ='red';
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         // let mainHeader = document.body.querySelector('h1');
         mainHeader.innerHTML ="JavaScript is Cool";
         // TODO: Uncomment the next line and get the sub header element by id
-        let subHeader =document.getElementById('sub-header');
-        // subHeader.style.color ='red';
+        const subHeader =document.getElementById('sub-header');
         // TODO: Set the text color of subHeader to blue
-        // let subHeader = document.body.querySelector('h2');
         subHeader.style.color ='blue';
         // TODO: Uncomment the next line and get all list items
-        // let listItems = document.body.querySelector('ul') ;
-        // listItems.style.color = 'red';
+        // const listItems = document.body.querySelectorAll('li') ;
+        // const listItems = document.getElementsByTagName('li'); //you could also do this
         // TODO: Set text color on every other list item to grey
-        // let listItems = document.body.querySelector('ul');
-        listItems.style.color = 'grey';
+        // const listItems = document.body.querySelector('ul');
+
+        for(let i = 0; i < listItems.length; i +=2){
+            listItems[1].style.color = 'lime'
+        }
         // TODO: Set text color of li with dbid = 1 to blue
-        let listItems = document.body.querySelector('li');
-        listItems.style.color = 'blue';
+        // let listItems = document.body.querySelector('li');
+        // listItems.style.color = 'blue';
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        let subParagraphs = document.getElementsByClassName('sub-header');
+        const subParagraphs = document.getElementsByClassName('sub-header');
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-            subParagraphs.innerHTML = 'Mission Accomplished'
+            subParagraphs[0].innertext = 'Mission Accomplished'
     })();
 </script>
 </body>
