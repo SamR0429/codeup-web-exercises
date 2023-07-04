@@ -1,32 +1,27 @@
-
 body {
     font-size: 18px;
     font-family: Hanken Grotesk, sans-serif;
     background-color: white ;
 }
-
-button {
-    background-color: #22223d;
-    border: none;
-    color: white;
-    padding: 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 4px 2px;
-    border-radius: 40px;
-    width: 250px;
+.rating-bubbles{
+    width: 300px;
+}
+.shadow{
+    box-shadow: 5px 5px 10px 2px rgb(222, 228, 243);
+}
+.summary-header{
+    padding: 2px ;
+    font-size: 14px;
 }
 div{
     width: 250px;
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
     padding: 10px;
     margin: 10px;
     border-radius: 8px;
 }
 .message-reaction {
-    background-color: rgba(222, 64, 60, 0.32);
+    background-color: rgba(218, 25, 21, 0.18);
     color:#de403c;
 }
 
@@ -44,9 +39,52 @@ div{
     background-color: rgba(0, 0, 255, 0.32);
     color: blue;
 }
+button {
+    background-color: #22223d;
+    border: none;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 20px 12px 20px;
+    border-radius: 40px;
+    width: 270px;
+    /*margin-top: 10px;*/
+}
+.circle {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    font-size: 50px;
+    /*color: #fff;*/
+    text-align: center;
+    /*background: #4926c8*/
+    margin-left: 65px;
 
+}
+.results-box{
+    background-color: #4133e7;
+    color: white;
+    width: 300px;
+    /*border: 1px solid grey;*/
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
 
-
+}
+.results-100{
+    font-size: 25px;
+}
+#grad {
+    background-image: linear-gradient(#4735e6, #4b24c3);
+}
+#grad1 {
+    background-image: linear-gradient(#4b24c3, #4735e6);
+}
 /*@media screen and (min-width:1440px ){*/
-
+/*}*/
+/*@media screen and (min-width: 375px){*/
 /*}*/
