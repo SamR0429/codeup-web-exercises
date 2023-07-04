@@ -76,15 +76,17 @@
 
 // Input:
     const studentsArray = [
-    { name: "Alice",
-      age: 18,
-      grades: [90, 85, 95, 87]
-     },
+    {
+        name: "Alice",
+        age: 18,
+        grades: [90, 85, 95, 87]
+    },
     { name: "Bob", age: 17, grades: [78, 88, 92, 84] },
     { name: "Charlie", age: 19, grades: [95, 92, 91, 88] },
     { name: "David", age: 18, grades: [80, 85, 88, 82] },
     { name: "Eve", age: 17, grades: [90, 91, 89, 87] },
 ];
+
 
 // Expected Output:
 // [
@@ -99,36 +101,51 @@
 //need a loop to go through the object list of students
 
 
-function calculateAverage(studentsArray) {
-    let total = 0;
-    let count = 0;
-
-    studentsArray.forEach(function (item, index) {
-        total += item;
-        count++;
-    });
-
-    return total / count;
-}
-
-console.log(calculateAverage(studentsArray));
-
-
+// function calculateAverage(studentsArray) {
+//     let total = 0;
+//     let count = 0;
+//
+//     studentsArray.forEach(function (item, index) {
+//         total += item;
+//         count++;
+//     });
+//
+//     return total / count;
+// }
+//
+// console.log(calculateAverage(studentsArray.grades));
 
 
-function getTopStudents(students) {
-    const topStudents = [];
-    for (let student of students) {
-        if (student.grades >= 85) {
-            topStudents.push(student);
-        }
-    }
-    return topStudents;
-}
+// does the new array need to be outside of the function so that the calculate function have access to it?
 
-console.log(getTopStudents(studentsArray));
+//
 
-// //this is to find the average number of an array
+// //this is to find the average number of an arrayfunction getTopStudents(students) {
+// //     const topStudents = [];
+// //     for (let student of students) {
+// //         if (student.grades >= 85) {
+// //             topStudents.push(student);
+// //         }
+// //     }
+// //     return topStudents;
+// // }
+// //
+// // console.log(getTopStudents(studentsArray));
+
+// function returnTopAverage(studentsArray){
+//     let studentsGrades = 0;
+//     for (let student of students){
+//         if (studentsGrades average < 85){
+//
+//         }
+//     }
+//}
+
+
+
+
+
+
 // arry = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 //
 // function calculateAverage(array) {
@@ -144,3 +161,35 @@ console.log(getTopStudents(studentsArray));
 // }
 //
 // console.log(calculateAverage(arry));
+
+
+// let myObject = {
+//     name: "John",
+//     age: 30,
+//     address: {
+//         street: "123 Main St",
+//         city: "Exampleville",
+//         country: "Wonderland"
+//     },
+//     hobbies: ["reading", "coding"],
+//     friends: [
+//         {
+//             name: "Alice",
+//             age: 28
+//         },
+//         {
+//             name: "Bob",    //this is index one that steve was calling in the console
+//             age: 32
+//         },
+//         {
+//             name: "Charlie",
+//             age: 29
+//         }
+//     ]
+// };
+//
+// console.log(myObject.friends[1].age);
+//
+// for (let friend of myObject.friends) {
+//     console.log(friend.name);
+// }
