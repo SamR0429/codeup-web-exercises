@@ -8,6 +8,7 @@ body {
 }
 .shadow{
     box-shadow: 5px 5px 10px 2px rgb(222, 228, 243);
+    height: 500px;
 }
 .summary-header{
     padding: 2px ;
@@ -59,9 +60,7 @@ button {
     line-height: 150px;
     border-radius: 50%;
     font-size: 50px;
-    /*color: #fff;*/
     text-align: center;
-    /*background: #4926c8*/
     margin-left: 65px;
 
 }
@@ -69,9 +68,8 @@ button {
     background-color: #4133e7;
     color: white;
     width: 300px;
-    /*border: 1px solid grey;*/
-    padding: 10px;
-    margin: 10px;
+    padding: 2px;
+    margin: 15px;
     border-radius: 8px;
 
 }
@@ -88,3 +86,9 @@ button {
 /*}*/
 /*@media screen and (min-width: 375px){*/
 /*}*/
+.row{
+    display: flex;
+}
+.column{
+    flex: 50%;
+}
