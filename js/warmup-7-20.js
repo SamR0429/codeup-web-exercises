@@ -278,3 +278,45 @@ returnAdmins(users) returns...
 //
 // console.log(returnLargestStudentCount);
 // returnLargestStudentCount(classes) // returns 30
+
+//july 5
+// 1. Create a function that prints 1 to 100.
+// let i
+// for(i=1;i<=100;i=i+1 )
+// {
+//     console.log(i)
+// }
+
+// 2. Create a function, fizzBuzz, that prints out all numbers from 1 to 100 but instead of printing
+// numbers that are evenly divisible by 3, print 'fizz' and any numbers evenly divisible
+// by 5, print 'buzz'. For any numbers that are evenly divisible by 3 AND 5, print 'fizzbuzz'.
+
+    for (let i = 1; i <= 100; i++) {
+        if (i % 15 === 0) console.log("FizzBuzz");
+        else if (i % 3 === 0) console.log("Fizz");
+        else if (i % 5 === 0) console.log("Buzz");
+        else console.log(i);
+    }
+//when doing this kind of question with this amount of specificity with the easily divisible by 3 and 5 it has to go first or else it wont work, the more specific it'll have to go first
+//you didnt make it a function and the instructions asked for that, maybe you can find away to refactor it later on
+    /*
+    fizzBuzz() // prints...
+
+    1
+    2
+    'fizz'
+    4
+    'buzz'
+    'fizz'
+    7
+    8
+    'fizz'
+    'buzz'
+    11
+    'fizz'
+    13
+    14
+    'fizzbuzz'
+    etc...
+
+    */

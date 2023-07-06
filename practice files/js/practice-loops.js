@@ -71,23 +71,19 @@
 
 //3.
 //You are given an array of student objects, where each object represents a student with properties name, age, and grades. Write a function called getTopStudents that takes the student array as input and returns an array of top students. A student is considered top if their average grade is 85 or higher.
-
 // BONUS: Each student in the resulting array should be represented as an object containing only the name and age properties. If there are no top students in the input array, the function should return an empty array.
-
 // Input:
-    const studentsArray = [
-    {
-        name: "Alice",
-        age: 18,
-        grades: [90, 85, 95, 87]
-    },
-    { name: "Bob", age: 17, grades: [78, 88, 92, 84] },
-    { name: "Charlie", age: 19, grades: [95, 92, 91, 88] },
-    { name: "David", age: 18, grades: [80, 85, 88, 82] },
-    { name: "Eve", age: 17, grades: [90, 91, 89, 87] },
-];
-
-
+//     const studentsArray = [
+//     {
+//         name: "Alice",
+//         age: 18,
+//         grades: [90, 85, 95, 87]
+//     },
+//     { name: "Bob", age: 17, grades: [78, 88, 92, 84] },
+//     { name: "Charlie", age: 19, grades: [95, 92, 91, 88] },
+//     { name: "David", age: 18, grades: [80, 85, 88, 82] },
+//     { name: "Eve", age: 17, grades: [90, 91, 89, 87] },
+// ];
 // Expected Output:
 // [
 //     { name: "Alice", age: 18, grades: [90, 85, 95, 87] },
@@ -99,13 +95,11 @@
 //need an empty array for top students
 //something to find the average of the students grade
 //need a loop to go through the object list of students
-
-
-// function calculateAverage(studentsArray) {
+// function calculateAverage(gradesArray) {
 //     let total = 0;
 //     let count = 0;
 //
-//     studentsArray.forEach(function (item, index) {
+//     gradesArray.forEach(function (item, index) {
 //         total += item;
 //         count++;
 //     });
@@ -113,39 +107,20 @@
 //     return total / count;
 // }
 //
-// console.log(calculateAverage(studentsArray.grades));
-
-
+// console.log(calculateAverage(studentsArray[0].grades));
 // does the new array need to be outside of the function so that the calculate function have access to it?
-
-//
-
-// //this is to find the average number of an arrayfunction getTopStudents(students) {
-// //     const topStudents = [];
-// //     for (let student of students) {
-// //         if (student.grades >= 85) {
-// //             topStudents.push(student);
-// //         }
-// //     }
-// //     return topStudents;
-// // }
-// //
-// // console.log(getTopStudents(studentsArray));
-
-// function returnTopAverage(studentsArray){
-//     let studentsGrades = 0;
-//     for (let student of students){
-//         if (studentsGrades average < 85){
-//
+//this is to find the average number of an array
+// function  getTopStudents(students) {
+//     const topStudents = [];
+//     for (let student of students) {
+//         if (calculateAverage(student.grades) >= 85) {
+//             topStudents.push(student);
 //         }
 //     }
-//}
-
-
-
-
-
-
+//     return topStudents;
+// }
+//
+// console.log(getTopStudents(studentsArray));
 // arry = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 //
 // function calculateAverage(array) {
@@ -162,34 +137,3 @@
 //
 // console.log(calculateAverage(arry));
 
-
-// let myObject = {
-//     name: "John",
-//     age: 30,
-//     address: {
-//         street: "123 Main St",
-//         city: "Exampleville",
-//         country: "Wonderland"
-//     },
-//     hobbies: ["reading", "coding"],
-//     friends: [
-//         {
-//             name: "Alice",
-//             age: 28
-//         },
-//         {
-//             name: "Bob",    //this is index one that steve was calling in the console
-//             age: 32
-//         },
-//         {
-//             name: "Charlie",
-//             age: 29
-//         }
-//     ]
-// };
-//
-// console.log(myObject.friends[1].age);
-//
-// for (let friend of myObject.friends) {
-//     console.log(friend.name);
-// }
