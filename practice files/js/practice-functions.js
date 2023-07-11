@@ -360,30 +360,30 @@ function isANumber(input) {
 //         { name: "Eve", age: 17 }
 //     ]
 
-// function calculateAverageLapTime(lapTimesArray) {
-//     let total = 0;
-//     let count = 0;
-//
-//     lapTimesArray.forEach(function (item, index) {
-//         total += item;
-//         count++;
-//     });
-//
-//     return total / count;
-// }
-//
-// console.log(calculateAverageLapTime(runners[0].lapTimes))
+function calculateAverageLapTime(lapTimesArray) {
+    let total = 0;
+    let count = 0;
 
-// function getTopRunners(runners){
-//     const topRunners = [];
-//     for(let runner of runners){
-//         if(calculateAverageLapTime(runner.lapTimes) >= 50) {
-//             topRunners.push(runner);
-//         }
-//     }
-//     return topRunners;
-// }
-// console.log(getTopRunners(runners));
+    lapTimesArray.forEach(function (item, index) {
+        total += item;
+        count++;
+    });
+
+    return total / count;
+}
+
+console.log(calculateAverageLapTime(runners[0].lapTimes))
+
+function getTopRunners(runners){
+    const topRunners = [];
+    for(let runner of runners){
+        if(calculateAverageLapTime(runner.lapTimes) >= 50) {
+            topRunners.push(runner);
+        }
+    }
+    return topRunners;
+}
+console.log(getTopRunners(runners));
 
 
 

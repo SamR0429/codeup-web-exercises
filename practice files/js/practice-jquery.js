@@ -54,6 +54,13 @@ $('li').hover(
         $(this).css('color', 'black');
     }
 );
+$('p').click(
+    function(){
+        $(this).css('text-decoration', 'underline');
+    }
+);
+
+
 /* if you forget to how to read this go back to the konami html and js*/
 let allowedKeys ={
     83: 's',
@@ -84,4 +91,10 @@ $(document).keyup(function(event){
     console.log(event.keyCode);
 });
 
-
+/* you broke the functionality of the site with this lol, just keeps popping up and you cant do anything to the site */
+// $("body").hover(function(){
+//     alert("You entered the document!");
+// });
+// $("document").mouseleave(function(){
+//     alert("Bye! You now leave document!");
+// });
