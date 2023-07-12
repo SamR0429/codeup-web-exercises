@@ -19,11 +19,11 @@ let foodY; //declaring the food in the game and its for the y coordinates
 let gameOver = false;
 
 window.onload = function () {  //this is saying that on page load do "this"
-    // Set board height and width
+    // THIS SECTION OF THE CODE IS FOR WHEN THE PAGE LOADS THE LAYOUT OF THE BOARD IS LOADED, SETTING WIDTH, HEIGHT, SPEED OF SNAKE, AND PLACEMENT OF FOOD WHILE TALKING TO THE HTML THROUGH CANVAS TO DISPLAY ALL PROPERTIES
     board = document.getElementById("board"); // this is jquery calling the id=board in the html
     board.height = total_row * blockSize; // blockSize * the total_row will be defined/stored in the board.height, making it easier down the line to call that again?
     board.width = total_col * blockSize; // same as code above?
-    context = board.getContext("2d"); // calling getContext is giving us access to the canvas used to display the game from the html, and that that with the board is equal to context
+    context = board.getContext("2d"); // calling getContext is giving us access to the canvas used to display the game from the html, and that with the board is equal to context
 
     placeFood(); //food in reference to the snake
     document.addEventListener("keyup", changeDirection); //for movements, event listener is finding the release of the key to execute
@@ -32,7 +32,7 @@ window.onload = function () {  //this is saying that on page load do "this"
 }
 
 function update() {
-    if (gameOver) {
+    if (gameOver) {     //if this is "false" because its declared on top that it is false
         return;
     }
 
