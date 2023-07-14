@@ -3,8 +3,9 @@ $(() => {
     //global var
     const map = initializeMap();
     const marker = createMarker();
+    const marker2 = createMarker2();
     const popUp = createPopUp();
-    // const popUp2 = createPopUp2();
+    const popUp2 = createPopUp2();
     //function
 
     // this initializes the map
@@ -27,6 +28,23 @@ $(() => {
             .addTo(map);
     }
 
+//this is a marker for the 54th
+function createMarker2(){
+        return new mapboxgl.Marker()
+            .setLngLat([-98.478700, 29.516279])
+            .addTo(map);
+}
+
+
+
+
+
+
+
+
+
+
+
     //function that creates a popup
     function createPopUp() {
         return new mapboxgl.Popup()
@@ -39,16 +57,24 @@ $(() => {
             `)
     }
 
-    // function createPopUp2() {
-    //     return new mapboxgl.Popup()
-    //         .setLngLat([-98.478774, 29.516616])
-    //         .setHTML(`
-    //         <div>
-    //         <h1>54th</h1>
-    //         <p>we can put anything</p>
-    //         </div>
-    //         `)
-    // }
+    function createPopUp2(){
+        return new mapboxgl.Popup()
+            .setLngLat([-98.478700, 29.516279])
+            .setHTML(`
+            <div>
+            <h1>54th</h1>
+            <p>fave</p>
+            </div>
+            `)
+    }
+
+
+
+
+
+
+
+
 
 
     //this brings you to paris
@@ -82,10 +108,12 @@ $(() => {
         })
     }
 
+
+    //this is for 54th geocode button
     function markFood() {
         geocode('954 E Rector St, San Antonio, TX 78216', MAPBOX_TOKEN).then((data) => {
             const rPopUp = new mapboxgl.Popup()
-                .setHTML(`<p>remember the alamo</p>`);
+                .setHTML(`<p>My favorite restaurant</p>`);
             const foodMarker = new mapboxgl.Marker()
                 .setLngLat(data)
                 .addTo(map)
@@ -100,13 +128,14 @@ $(() => {
     document.querySelector('#geocode-button').addEventListener('click', goToParis)
     document.querySelector('#reverse-geocode-button').addEventListener('click', findAndPrintAddress)
     document.querySelector('#mark-alamo').addEventListener('click', markAlamo)
-   document.querySelector('#mark-restaurant').addEventListener('click', markFood)
+    document.querySelector('#mark-restaurant').addEventListener('click', markFood)
     document.querySelector('#zoom5').addEventListener('click', function(){map.setZoom(5)})
     document.querySelector('#zoom15').addEventListener('click', function(){map.setZoom(15)})
     document.querySelector('#zoom20').addEventListener('click', function(){map.setZoom(20)})
     //runs when program loads
     map.setZoom(10);
     marker.setPopup(popUp)
+
     // marker.setPopup(popUp2)
 
 });

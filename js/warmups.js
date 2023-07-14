@@ -659,7 +659,6 @@ etc...
 // }
 // console.log(getHouseInfo);
 
-
 /*
 need function base
 empty array to store getInfo needed
@@ -669,3 +668,59 @@ collecting needed info
 then go to the next index
 have it pushed onto the new array
  */
+
+// july 14
+// Write a function called removeEvens that takes an array of numbers
+// And removes any even number from the array
+
+// Examples:
+
+// Input: [1, 3, 2, 13, 74, 33]
+// Expected Output: [1, 3, 13, 33]
+
+// Input: [62, 3, 2, 8, 531, 7]
+// Expected Output: [3, 531, 7]
+
+/*
+need a function
+need something with % 2 === 0
+maybe a new array ?
+maybe a loop cause you need to go through every number in the array
+ */
+
+// function removeEvens (){
+//     let myArray=[1, 3, 2, 13, 74, 33]
+//     let newArray = [];
+//     for(let i = 0; i < myArray.length; i++){
+//     if(myArray[i] % 2 !== 0) newArray.push(myArray[i]);
+// }
+// console.log(newArray);
+// }
+// removeEvens();
+//                                this was just another way of doing it
+// let myArray = [3, 5, 6, 8, 10, 22, 25, 43, 46, 86];
+// let oddNumbers = myArray.filter(function(number) {
+//     return number % 2 !== 0
+// });
+// console.log(oddNumbers);
+//                                        this was the walk through
+// function removeTheEvens (inputArray){
+//     const oddNumbers =[];
+//     for(const number of inputArray){
+// if(!isANumber(number)){
+//     return false;
+// } this is a guard clause for whether each index of an array is a number and if it isnt then return false
+
+//         if(number % 2 !== 0){
+//             oddNumbers.push(number);
+//         }
+//     }
+//     return oddNumbers;
+// }
+// console.log(removeTheEvens([62, 3, 2, 8, 531, 7]));
+
+// if(Array.isArray(input array here)) this is a guard clause that checks if the input is an array or not
+
+
+
+
