@@ -1,10 +1,6 @@
 $(() => {
 
 
-
-
-
-
     ////////////////////////////////////////////////////////////////////////////////////
 // Global Variables
 ///////////////////////////////////////////////////////////////////////////////////
@@ -36,10 +32,6 @@ $(() => {
     }).fail(console.error);
 
 
-
-
-
-
 //ask steve about this on monday
     // function fetchData(url) {
     //     $.ajax(url)
@@ -64,13 +56,23 @@ $(() => {
             container: 'map',
             style: 'mapbox://styles/mapbox/navigation-night-v1',
             zoom: 10,
-            center: [-98.491142, 29.424349]
+            center: [-98.491142, 29.424349],
+            attributionControl: false
         }
+        // map.addControl(new mapboxgl.AttributionControl(), 'top-left');
+        //the code above is for postioning the mapbox on the page, wont work properly ask steve or someone
         return new mapboxgl.Map(mapOptions);
+
     }
 
+    // function cToF(celsius) {
+    //     let cTemp = celsius;
+    //     let cToFahr = cTemp * 9 / 5 + 32;
+    //     let message = cTemp + '\xB0C is ' + cToFahr + ' \xB0F.';
+    //     console.log(message);
+    // }
 
-
+    // this is to test the function above, it was working but need to have it work for convert what the ajax object is displaying: cToF(60); . ask about the units: imperial mean ? is that for
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Events
@@ -81,4 +83,32 @@ $(() => {
 // Run When App Loads
 ///////////////////////////////////////////////////////////////////////////////////
     map.setZoom(10);
-});
+
+    $.ajax(getWeatherURL(...ALAMO_COORDINATES))
+        .done((data) => {
+
+            data.list.forEach((day, index) => {
+                if (index % 8 === 0) {
+                    console.log(day.main.humidity);
+                }
+            });
+
+            $.ajax(getWeatherURL(...ALAMO_COORDINATES))
+                .done(data => {
+                    console.log(data);
+                    const minMaxTemps = returnMinMaxTemps(data);
+                    minMaxTemps.forEach(minMaxTemp => {
+                        console.log(minMaxTemp);
+                    });
+                })
+                .fail(console.error);
+        })
+
+        });
+
+
+
+
+
+
+

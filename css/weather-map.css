@@ -8,3 +8,10 @@ img{
 body{
     font-family: 'Montserrat' , sans-serif;
 }
+/*body { margin: 0; padding: 0; }*/
+/*#map { position: absolute; top: 0; bottom: 0; width: 100%; }*/
+.card{
+    /*width: ;*/
+    margin-left: 18rem;
+    margin-right: 18rem;
+}
