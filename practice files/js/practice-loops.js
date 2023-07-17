@@ -136,4 +136,3 @@ console.log(getTopStudents(studentsArray));
 // }
 //
 // console.log(calculateAverage(arry));
-

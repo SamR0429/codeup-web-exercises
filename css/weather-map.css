@@ -4,14 +4,43 @@ img{
 .navbar{
     font-family: 'Montserrat' , sans-serif;
     font-size: 1rem;
+
 }
 body{
     font-family: 'Montserrat' , sans-serif;
 }
 /*body { margin: 0; padding: 0; }*/
 /*#map { position: absolute; top: 0; bottom: 0; width: 100%; }*/
-.card{
-    /*width: ;*/
-    margin-left: 18rem;
-    margin-right: 18rem;
+/*.card-container{*/
+/*    !*width: ;*!*/
+/*    margin-left: 10rem;*/
+/*    margin-right: 10rem;*/
+/*    width: 60rem;*/
+
+/*}*/
+.sam-card{
+    text-decoration: underline;
+    font-family: 'Montserrat' , sans-serif;
+    list-style: none;
+    /*align-content: center;*/
+    background-color: white;
+    border-color: black;
+    width:60rem;
+    margin-left: 15rem;
+}
+.date{
+    background-color: black;
+    color:#D9D6D6;
+}
+#map{
+    margin-left: 15rem;
+}
+.page-wrapper{
+    background-color: rgba(199, 193, 193, 0.66);
+}
+.min-temp{
+    color: #377DC2;
+}
+.max-temp{
+    color: #E4763B
 }
