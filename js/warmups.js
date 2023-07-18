@@ -669,6 +669,7 @@ then go to the next index
 have it pushed onto the new array
  */
 
+
 // july 14
 // Write a function called removeEvens that takes an array of numbers
 // And removes any even number from the array
@@ -704,19 +705,35 @@ maybe a loop cause you need to go through every number in the array
 // });
 // console.log(oddNumbers);
 //                                        this was the walk through
-// function removeTheEvens (inputArray){
-//     const oddNumbers =[];
-//     for(const number of inputArray){
-// if(!isANumber(number)){
-//     return false;
-// } this is a guard clause for whether each index of an array is a number and if it isnt then return false
 
-//         if(number % 2 !== 0){
+
+// function isANumber(input) {
+//     if (typeof input === "boolean" || input === null) {
+//         return false;
+//     }
+//     if (isNaN(input)) {
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
+//
+//
+// function removeTheEvens(inputArray) {
+//     const oddNumbers = [];
+//     for (const number of inputArray) {
+//         if (!isANumber(number)) {
+//             return false;
+//         }
+// // this is a guard clause for whether each index of an array is a number and if it isnt then return false
+//
+//         if (number % 2 !== 0) {
 //             oddNumbers.push(number);
 //         }
 //     }
 //     return oddNumbers;
 // }
+//
 // console.log(removeTheEvens([62, 3, 2, 8, 531, 7]));
 
 // if(Array.isArray(input array here)) this is a guard clause that checks if the input is an array or not

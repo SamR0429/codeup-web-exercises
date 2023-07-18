@@ -43,13 +43,15 @@
         </div>
     </nav>
 </header>
+<!-- start of main content-->
 <div class="page-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="column">
 
-
-
+                <form class="search-bar me-3 mt-3" role="search" id="search-bar">
+                    <input type="search" class="form-control" placeholder="Search city..." aria-label="Search">
+                </form>
 
                 <div class='d-flex flex-container mt-3 mb-3' id="map" style="height:40rem; width: 70rem ;"></div>
 
@@ -60,15 +62,13 @@
                         </div>
                     </div>
                 </div>
+
             </div>
-
-
         </div>
     </div>
-    <!-- this is the footer -->
-
 </div>
-<!--<div class="footer-container">-->
+<!-- end of main content -->
+<!-- this is the footer -->
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
         <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
@@ -78,7 +78,6 @@
         </a>
         <span class="mb-3 mb-md-0 text-body-secondary">&copy; The Weather Map, Inc</span>
     </div>
-
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li class="ms-3"><a class="text-body-secondary" href="#">
             <img src="img/twitterlogo.png">
@@ -100,8 +99,6 @@
         </a></li>
     </ul>
 </footer>
-<!--</div>-->
-
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"

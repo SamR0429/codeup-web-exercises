@@ -11,20 +11,21 @@ body{
 }
 
 .sam-card{
-    /*text-decoration: underline;*/
     font-family: 'Montserrat' , sans-serif;
     list-style: none;
     background-color: white;
     border-color: black;
     width:50rem;
     margin-left: 20.5rem;
+    border-radius: .5rem;
+
 }
 .date{
     background-color: black;
     color:#D9D6D6;
 }
 #map{
-    margin-left: 11.5rem;
+    margin-left: 10.5rem;
 }
 .page-wrapper{
     background-color: rgba(199, 193, 193, 0.66);
@@ -36,12 +37,6 @@ body{
     color: #E4763B
 }
 .search-bar{
-    width: 55.7rem;
-    margin-left: 15rem;
-    border-width: .2rem ;
-    border-color: black;
-    border-radius: .5rem;
-}
-button{
-    border-radius: 2rem;
+    width: 40rem;
+    margin-left: 25rem;
 }
