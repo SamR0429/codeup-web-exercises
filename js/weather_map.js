@@ -34,7 +34,7 @@ $(() => {
         return `${OPEN_WEATHER_URL}?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_APPID}`;
     }
 
-    //function to activate map
+    //function to activate the map
     function initializeMap() {
         mapboxgl.accessToken = MAPBOX_TOKEN;
 
@@ -70,17 +70,23 @@ $(() => {
         createdCard.classList.add('sam-card');
         createdCard.innerHTML = (`
                  <li class="date">${list.dt_txt}</li>
+                 <br>
                  <li class="min-temp">LOW: ${list.main.temp_min}&deg;F</li>
+                 <hr>
                  <li class="max-temp">HIGH: ${list.main.temp_max}&deg;F</li>
+                 <hr>
                  <li class="conditions">Conditions: ${list.weather[0].description}</li>
+                 <hr>
                  <li class="humidity">Humidity: ${list.main.humidity} %</li>
+                 <hr>
                  <li class="wind">Wind: ${list.wind.speed} MPH</li>
-                 <li class="pressure">Pressure: ${list.main.pressure}</li>
+                 <hr>
+                 <li class="pressure">Pressure: ${list.main.pressure} hPa</li>
+                 <br>
             `)
         span.appendChild(createdCard);
         // })
     }
-
 
     //created blue marker
     function createMarker() {
@@ -153,6 +159,12 @@ $(() => {
         console.log(data);
     }).fail(console.error);
 
+
+
+    // Extract this out into its own function
+    // That accepts longitude and latitude parameters
+    // use that lon and lat in getWeatherURL instead of ...SAN_ANTONIO_COORDINATES
+
     $.ajax(getWeatherURL(...SAN_ANTONIO_COORDINATES))
         .done((data) => {
 
@@ -175,6 +187,8 @@ $(() => {
                 })
                 .fail(console.error);
         })
+    // End of the function we will extract
+
 
 });
 

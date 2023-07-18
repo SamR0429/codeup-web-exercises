@@ -9,31 +9,22 @@ img{
 body{
     font-family: 'Montserrat' , sans-serif;
 }
-/*body { margin: 0; padding: 0; }*/
-/*#map { position: absolute; top: 0; bottom: 0; width: 100%; }*/
-/*.card-container{*/
-/*    !*width: ;*!*/
-/*    margin-left: 10rem;*/
-/*    margin-right: 10rem;*/
-/*    width: 60rem;*/
 
-/*}*/
 .sam-card{
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     font-family: 'Montserrat' , sans-serif;
     list-style: none;
-    /*align-content: center;*/
     background-color: white;
     border-color: black;
-    width:60rem;
-    margin-left: 15rem;
+    width:50rem;
+    margin-left: 20.5rem;
 }
 .date{
     background-color: black;
     color:#D9D6D6;
 }
 #map{
-    margin-left: 15rem;
+    margin-left: 11.5rem;
 }
 .page-wrapper{
     background-color: rgba(199, 193, 193, 0.66);
@@ -43,4 +34,14 @@ body{
 }
 .max-temp{
     color: #E4763B
+}
+.search-bar{
+    width: 55.7rem;
+    margin-left: 15rem;
+    border-width: .2rem ;
+    border-color: black;
+    border-radius: .5rem;
+}
+button{
+    border-radius: 2rem;
 }
