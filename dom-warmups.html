@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="color">click me</button>
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script>
+    (function () {
+        "use strict";
+
+        const changeBackGroundColorBtn = document.getElementById('change-background-color-btn');
+
+
+        function changeBackGroundColor() {
+            const color = document.getElementById('color');
+            color.style.color = 'blue';
+        }
+
+        changeBackGroundColorBtn.addEventListener('click', changeBackGroundColor);
+
+    })();
+</script>
+</body>
+</html>

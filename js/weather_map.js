@@ -5,39 +5,17 @@ $(() => {
 ///////////////////////////////////////////////////////////////////////////////////
 
     const OPEN_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/forecast';
-    // const map = initializeMap();
-    const div = document.querySelector('#insertWeather');
-    const searchBox = document.querySelector('#search-bar');
 
+    const div = document.querySelector('#insertWeather');
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Functions
 ///////////////////////////////////////////////////////////////////////////////////
-    //function to with url
+
+    //function with url, initionalizing map
     function getWeatherURL(lat, lon) {
         return `${OPEN_WEATHER_URL}?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_APPID}`;
     }
-
-    //function to activate the map
-    // function initializeMap() {
-    //     mapboxgl.accessToken = MAPBOX_TOKEN;
-    //
-    //     const mapOptions = {
-    //         container: 'map',
-    //         style: 'mapbox://styles/mapbox/navigation-night-v1',
-    //         zoom: 10,
-    //         center: [-98.4926, 29.4252],
-    //     }
-    //     const marker = new mapboxgl.Marker({
-    //         color: 'red',
-    //         draggable: true
-    //     })
-    //         .setLngLat([-98.4926, 29.4252])
-    //         .addTo(map);
-    //
-    //     return new mapboxgl.Map(mapOptions);
-    // }
-
 
         mapboxgl.accessToken = MAPBOX_TOKEN;
 
@@ -49,9 +27,7 @@ $(() => {
             center: [-98.4926, 29.4252],
         });
 
-
-
-
+// creation of marker
         const marker = new mapboxgl.Marker({
             color: 'red',
             draggable: true
@@ -63,10 +39,7 @@ $(() => {
             return map;
         })
 
-
-
-
-
+//generating the weather and giving it a div for the html
     function getWeatherData(lat, lon) {
         generateWeather = $.ajax(getWeatherURL(lat, lon)).done(data => {
             console.log(data)
@@ -75,7 +48,7 @@ $(() => {
             for (let i = 0; i < data.list.length; i += 8) {
                 const weatherCard = $('<div></div>')
                 weatherCard.html(`
-    <div class="sam-card">
+                   <div class="sam-card">
                      <p class="date">${data.list[i].dt_txt.split(' ')[0]}</p>
                      <br>
                      <p class="min-temp">LOW: ${data.list[i].main.temp_min}&deg;F</p>
@@ -91,41 +64,18 @@ $(() => {
                      <p class="pressure">Pressure: ${data.list[i].main.pressure} hPa</p>
                      <br>
                 </div>
-`)
+                `)
                 console.log(weatherCard);
                 $('#insertWeather').append(weatherCard);
             }
         })
     }
-    //you cant use a for of loop
-
-    // //function to render weather
-    // function renderAllWeathers(list) {
-    //     // const createdCard = document.createElement('ul');
-    //     // div.classList.add('sam-card');
-    //     // code to stop duplicating cards
-    //     // const parentCard = document.getElementById('insertWeather');
-    //     // parentCard.innerHTML = '';
-    //
-    //     let html = `
-    //
-
-    //         `
-    //     return html;
-    //     // div.appendChild(createdCard);
-    //     //take and replace not make new cards
-    //  })
-    //
-    // //for the draggable marker location rendering
-    // function onDragEnd() {
-    //     let coords = draggableMarker.getLngLat();
-    //     getWeatherData(coords.lat, coords.lng);
-    // }
-    //
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Events
 ///////////////////////////////////////////////////////////////////////////////////
+
+    //marker grabbing coords and feeding lat and long to map
     let coords = marker.getLngLat();
     getWeatherData(coords.lat, coords.lng);
 
@@ -134,11 +84,12 @@ $(() => {
         getWeatherData(coords.lat, coords.lng);
     })
 
-    //marker.on("dragend", onDragEnd);
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Run When App Loads
 ///////////////////////////////////////////////////////////////////////////////////
+
+  //map zoom when it pops up
     map.setZoom(10);
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -147,12 +98,3 @@ $(() => {
 
 
 });
-
-
-//api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
-
-// ask about this `${OPEN_WEATHER_URL}?q={city name}&appid=${OPEN_WEATHER_URL}`;
-
-//would you use reverse geocode for the pin drop ? the tie that somehow to another action taking those coordinates and feeding them into the getWeatherUrl function
-
-//write a function to take lat and long and render html, the link it to draggable marker
