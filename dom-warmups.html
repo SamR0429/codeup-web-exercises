@@ -4,15 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body id="color">
 
-<button id="color">click me</button>
-
-
-
-
-
-
+<button id="change-bg-color">click me</button>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -22,15 +16,21 @@
     (function () {
         "use strict";
 
-        const changeBackGroundColorBtn = document.getElementById('change-background-color-btn');
+        //this is vanillaJS
+        const changeBgBtn = document.querySelector('#change-bg-color');
+        const body =document.querySelector('body');
+        changeBgBtn.addEventListener('click', () => {
+            body.style.background = 'red';
+        })
+
+        //this is the equivalent to above
+        // const favColor ='red';
+        // $('#change-bg-color').on('click', () =>{
+        //     $('body').css('background', favColor);
+        // })
 
 
-        function changeBackGroundColor() {
-            const color = document.getElementById('color');
-            color.style.color = 'blue';
-        }
 
-        changeBackGroundColorBtn.addEventListener('click', changeBackGroundColor);
 
     })();
 </script>
