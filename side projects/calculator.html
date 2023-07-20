@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Warmups</title>
+    <link rel="stylesheet" href="css/calculator.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page-wrapper bg-dark text-white">
+    <div class="container">
+
+        <div class="row">
+            <h2>Need Help With Some Math? I'll Help!</h2>
+            <h3>The total is: <span id="total-output">0</span></h3>
+
+            <div class="row">
+
+                <label for="number">Number</label>
+
+                <input id="number" type="number" name="number" min="infinite" max="infinite" value="0">
+                <!-- this is the card for the buttons for the calculator -->
+                <div class="card-body">
+
+                    <button class="cals" id="clear-btn">clear</button>
+                    <button class="cals" id="add-btn">+</button>
+                    <button class="cals" id="subtract-btn">-</button>
+                    <button class="cals" id="multiply-btn">*</button>
+                    <button class="cals" id="divide-btn">/</button>
+
+                    <div class="card-body" id="insertKeys">
+                        <!-- rendering buttons from js-->
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--  Include the CDN script for jQuery below -->
+<!--<script src="js/calculator.js"></script>-->
+<script
+        src="http://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    //logic for calculator
+
+
+    let input = 0
+    let output = 0
+    let total = 0
+
+    $('#clear-btn').on('click', () => {
+        input = $('#number').val();
+        output = $('#total-output').text();
+        total = 0
+        $('#total-output').text(total);
+
+        console.log(total);
+    });
+
+
+    $('#add-btn').on('click', () => {
+        input = $('#number').val();
+        output = $('#total-output').text();
+        total = parseInt(input) + parseInt(output)
+        $('#total-output').text(total);
+        console.log(total);
+    });
+
+
+    $('#subtract-btn').on('click', () => {
+        input = $('#number').val();
+        output = $('#total-output').text();
+        total = parseInt(output) - (parseInt(input));
+        $('#total-output').text(total);
+        console.log(total);
+    });
+
+    $('#multiply-btn').on('click', () => {
+        input = $('#number').val();
+        output = $('#total-output').text();
+        total = parseInt(output) * (parseInt(input));
+        $('#total-output').text(total);
+        console.log(total);
+    });
+
+    $('#divide-btn').on('click', () => {
+        input = $('#number').val();
+        output = $('#total-output').text();
+        total = parseInt(output) / (parseInt(input));
+        $('#total-output').text(total);
+        console.log(total);
+    });
+
+    //adding numbers to html
+
+    $('#insertKeys').html('');
+    const keyCard = $('<div></div>')
+    keyCard.html(`
+    <div class="card-body">
+   <button class="numberButtons">0</button>
+<button class="numberButtons">1</button>
+<button class="numberButtons">2</button>
+<button class="numberButtons">3</button>
+<button class="numberButtons">4</button>
+<button class="numberButtons">5</button>
+<button class="numberButtons">6</button>
+<button class="numberButtons">7</button>
+<button class="numberButtons">8</button>
+<button class="numberButtons">9</button>
+</div>
+    `)
+    console.log(keyCard);
+    $('#insertKeys').append(keyCard)
+
+
+
+
+</script>
+
+</body>
+</html>

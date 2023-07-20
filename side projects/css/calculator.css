@@ -1,0 +1,40 @@
+h2, h3 ,label , #number{
+    font-family: 'tektur', sans-serif;
+}
+
+.cals {
+    margin: 1rem;
+    height: 4rem;
+}
+
+#number{
+    height: 3rem;
+    margin-bottom: 1rem;
+    width: 5rem;
+}
+
+/* button design*/
+button {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+    margin: 30px 0;
+    width: 5rem;
+}
+
+button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+
+.numberButtons{
+    margin: 1rem;
+}
+
