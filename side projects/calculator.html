@@ -31,7 +31,7 @@
                     <button class="cals" id="subtract-btn">-</button>
                     <button class="cals" id="multiply-btn">*</button>
                     <button class="cals" id="divide-btn">/</button>
-
+                    <button class="cals" id="equal-btn">=</button>
                     <div class="card-body" id="insertKeys">
                         <!-- rendering buttons from js-->
                     </div>
@@ -101,10 +101,16 @@
     $('#divide-btn').on('click', () => {
         input = $('#number').val();
         output = $('#total-output').text();
-        total = parseInt(output) / (parseInt(input));
+        total = parseInt(input) / (parseInt(output));
         $('#total-output').text(total);
         console.log(total);
     });
+
+    // $('#equal-btn').on('click', () =>{
+    //     input = $('#number').val();
+    //     output = $('#total-output').text();
+    //
+    // })
 
     //adding numbers to html
 
@@ -128,9 +134,21 @@
     $('#insertKeys').append(keyCard)
 
 //logic for number keys
-    const numberValues =[
-        // id='n' = number
-    ]
+// document.querySelectorAll('.numberButtons').forEach(button =>{
+// document.element.addEventListener('click', )
+// })
+
+    // Function to handle button click
+    function handleButtonClick(event) {
+        const button = event.target;
+        const buttonText = button.textContent;
+        $('#number').val(buttonText)
+        console.log(`Button ${buttonText} is clicked.`);
+
+    }
+    document.querySelectorAll('.numberButtons').forEach(button => {
+        button.addEventListener('click', handleButtonClick);
+    });
 
 
 </script>
