@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOM Manipulation Warmups</title>
+    <title>Calculator Project</title>
     <link rel="stylesheet" href="css/calculator.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -10,37 +10,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-<div class="page-wrapper bg-dark text-white">
-    <div class="container">
+<body class="bg-dark text-white">
+<div class="page-wrapper">
+    <div class="w-100 text-center p-1">
 
+        <h2>Need Help With Some Math? I'll Help!</h2>
+        <h3>The total is: <span id="current-total">0</span></h3>
+
+    </div>
+    <div class="container ">
         <div class="row">
-            <h2>Need Help With Some Math? I'll Help!</h2>
-            <h3>The total is: <span id="total-output">0</span></h3>
 
-            <div class="row">
+            <label for="number">Nucurrent-total
 
-                <label for="number">Number</label>
+            <input id="number" type="number" name="number" min="infinite" max="infinite" value="0">
+            <!-- this is the card for the buttons for the calculator -->
+            <div class="card-body">
 
-                <input id="number" type="number" name="number" min="infinite" max="infinite" value="0">
-                <!-- this is the card for the buttons for the calculator -->
-                <div class="card-body">
-
-                    <button class="cals" id="clear-btn">clear</button>
-                    <button class="cals" id="add-btn">+</button>
-                    <button class="cals" id="subtract-btn">-</button>
-                    <button class="cals" id="multiply-btn">*</button>
-                    <button class="cals" id="divide-btn">/</button>
-                    <button class="cals" id="equal-btn">=</button>
-                    <div class="card-body" id="insertKeys">
-                        <!-- rendering buttons from js-->
-                    </div>
-
-                </div>
-
+                <button class="cals" id="clear-btn">AC</button>
+                <button class="cals" id="add-btn">+</button>
+                <button class="cals" id="subtract-btn">-</button>
+                <button class="cals" id="multiply-btn">*</button>
+                <button class="cals" id="divide-btn">/</button>
 
             </div>
-
+            <div class="card-body" id="insertKeys">
+                <!-- rendering buttons from js-->
+            </div>
         </div>
     </div>
 </div>
@@ -65,9 +61,9 @@
 
     $('#clear-btn').on('click', () => {
         input = $('#number').val();
-        output = $('#total-output').text();
+        output = $('#current-total').text();
         total = 0
-        $('#total-output').text(total);
+        $('#current-total').text(total);
 
         console.log(total);
     });
@@ -75,42 +71,37 @@
 
     $('#add-btn').on('click', () => {
         input = $('#number').val();
-        output = $('#total-output').text();
+        output = $('#current-total').text();
         total = parseInt(input) + parseInt(output)
-        $('#total-output').text(total);
+        $('#current-total').text(total);
         console.log(total);
     });
 
 
     $('#subtract-btn').on('click', () => {
         input = $('#number').val();
-        output = $('#total-output').text();
+        output = $('#current-total').text();
         total = parseInt(output) - (parseInt(input));
-        $('#total-output').text(total);
+        $('#current-total').text(total);
         console.log(total);
     });
 
     $('#multiply-btn').on('click', () => {
         input = $('#number').val();
-        output = $('#total-output').text();
+        output = $('#current-total').text();
         total = parseInt(output) * (parseInt(input));
-        $('#total-output').text(total);
+        $('#current-total').text(total);
         console.log(total);
     });
 
     $('#divide-btn').on('click', () => {
         input = $('#number').val();
-        output = $('#total-output').text();
+        output = $('#current-total').text();
         total = parseInt(input) / (parseInt(output));
-        $('#total-output').text(total);
+        $('#current-total').text(total);
         console.log(total);
     });
 
-    // $('#equal-btn').on('click', () =>{
-    //     input = $('#number').val();
-    //     output = $('#total-output').text();
-    //
-    // })
 
     //adding numbers to html
 
@@ -118,34 +109,28 @@
     const keyCard = $('<div></div>')
     keyCard.html(`
     <div class="card-body">
-<button class="numberButtons" id="n0">0</button>
-<button class="numberButtons" id="n1">1</button>
-<button class="numberButtons" id="n2">2</button>
-<button class="numberButtons" id="n3">3</button>
-<button class="numberButtons" id="n4">4</button>
-<button class="numberButtons" id="n5">5</button>
-<button class="numberButtons" id="n6">6</button>
-<button class="numberButtons" id="n7">7</button>
-<button class="numberButtons" id="n8">8</button>
-<button class="numberButtons" id="n9">9</button>
-</div>
-    `)
-    console.log(keyCard);
+        <button class="numberButtons" id="n0">0</button>
+        <button class="numberButtons" id="n1">1</button>
+        <button class="numberButtons" id="n2">2</button>
+        <button class="numberButtons" id="n3">3</button>
+        <button class="numberButtons" id="n4">4</button>
+        <button class="numberButtons" id="n5">5</button>
+        <button class="numberButtons" id="n6">6</button>
+        <button class="numberButtons" id="n7">7</button>
+        <button class="numberButtons" id="n8">8</button>
+        <button class="numberButtons" id="n9">9</button>
+        </div>
+    `);
     $('#insertKeys').append(keyCard)
 
-//logic for number keys
-// document.querySelectorAll('.numberButtons').forEach(button =>{
-// document.element.addEventListener('click', )
-// })
-
-    // Function to handle button click
+    //logic for number keys
     function handleButtonClick(event) {
         const button = event.target;
         const buttonText = button.textContent;
         $('#number').val(buttonText)
         console.log(`Button ${buttonText} is clicked.`);
-
     }
+
     document.querySelectorAll('.numberButtons').forEach(button => {
         button.addEventListener('click', handleButtonClick);
     });
