@@ -42,6 +42,40 @@ const getFilm = (url) => {
     //     console.log(film);
     // });
 }
+
+const getVehicle = (url) =>{
+    const vehicleUrl = url;
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }
+    return fetch(vehicleUrl, options)
+        .then((response) => {
+            return response.json();
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+}
+const getStarship = (url) => {
+    const starshipUrl = url;
+    const options = {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }
+    return fetch(starshipUrl, options)
+        .then((response) =>{
+            return response.json();
+        })
+        .catch(error =>{
+            console.log(error.message);
+        })
+}
+
 (() => { // IIFE (Immediately Invoked Function Expression)
     // const url = 'https://swapi.dev/api/people/1/'
     // const options = {
@@ -76,6 +110,12 @@ const getFilm = (url) => {
         //         });
         getFilm(person.films[0]).then(film => {
             console.log(film);
+            getStarship(person.starships[0]).then(starship =>{
+                console.log(starship);
+                getVehicle(person.vehicles[0]).then(vehicle =>{
+                    console.log(vehicle);
+                })
+            })
         })
     });
 
