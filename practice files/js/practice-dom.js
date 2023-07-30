@@ -1,3 +1,22 @@
+/*
+* its easier if you declare stuff as a const, declare everything as a const so that way you dont have to write complicated code , makes it easier to write
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+
+
+
+
+
 //////////////////////////////////const
 //2.
 const body = document.querySelector('body')
@@ -11,6 +30,8 @@ const problem6Span = document.querySelector('#problem-6-span')
 //8.
 const h4List = document.querySelectorAll('h4')
 //------------------------------------------------------------------------------------
+const ddList = document.querySelector('dd')
+const ddButton = document.querySelector('#btn1')
 
 
 //////////////////////////////////functions
@@ -33,8 +54,11 @@ function problem8 (){
     }
 }
 //-------------------------------------------------------------------------------------
-
-
+function listener(){
+    for(let ddElement of ddList){
+        ddElement.classList.toggle('invisible') /// ask steve why can you can put this here and it works? i thought you could only do calling of classes or ids?
+    }
+}
 
 //////////////////////////////////event listeners
 
@@ -48,5 +72,4 @@ for(let h4 of h4List){
     h4.addEventListener('click', problem8)
 }
 //-------------------------------------------------------------------------------------
-
-
+ddButton.addEventListener('click', listener)
