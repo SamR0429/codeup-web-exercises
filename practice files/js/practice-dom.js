@@ -30,7 +30,7 @@ const problem6Span = document.querySelector('#problem-6-span')
 //8.
 const h4List = document.querySelectorAll('h4')
 //------------------------------------------------------------------------------------
-const ddList = document.querySelector('dd')
+const ddList = document.querySelectorAll('dd')
 const ddButton = document.querySelector('#btn1')
 
 
