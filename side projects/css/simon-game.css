@@ -66,11 +66,11 @@ body {
     border-radius: 50%;
     height: 500px;
     width: 500px;
-    position: relative;
+    position: relative; /* changed this */
     border-style: solid;
     border-width: 10px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 11%;
     box-shadow: 8px 8px 15px 5px #888888;
 }
 

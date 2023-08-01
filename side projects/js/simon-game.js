@@ -1,4 +1,4 @@
-
+//declaring variables
 let order = [];
 let playerOrder = [];
 let flash;
@@ -10,7 +10,7 @@ let strict = false;
 let noise = true;
 let on = false;
 let win;
-
+//const for event listeners
 const turnCounter = document.querySelector("#turn");
 const topLeft = document.querySelector("#topLeft");
 const topRight = document.querySelector("#topRight");
@@ -20,28 +20,9 @@ const strictButton = document.querySelector("#strict");
 const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
 
-strictButton.addEventListener('click', (event) => {
-    strict = strictButton.checked === true;
-});
+//ALL FUNCTIONS FOR GAME
 
-onButton.addEventListener('click', (event) => {
-    if (onButton.checked === true) {
-        on = true;
-        turnCounter.innerHTML = "-";
-    } else {
-        on = false;
-        turnCounter.innerHTML = "";
-        clearColor();
-        clearInterval(intervalId);
-    }
-});
-
-startButton.addEventListener('click', (event) => {
-    if (on || win) {
-        play();
-    }
-});
-
+//initializing game start up, game has 20 rounds, and the patterns are random with the math.random
 function play() {
     win = false;
     order = [];
@@ -58,6 +39,7 @@ function play() {
 
     intervalId = setInterval(gameTurn, 800);
 }
+//function is working when its the games turn to make a pattern so user cant click colors as they are being shown, NO CHEATING
 function gameTurn() {
     on = false;
 
@@ -79,6 +61,8 @@ function gameTurn() {
         }, 200);
     }
 }
+
+// the following 4 functions control the noise each section makes, and controls the color when showing the pattern
 function one() {
     if (noise) {
         let audio = document.getElementById("clip1");
@@ -111,66 +95,24 @@ function four() {
     noise = true;
     bottomRight.style.backgroundColor = "lightskyblue";
 }
+
+//setting color default for when not showing a pattern to user
 function clearColor() {
     topLeft.style.backgroundColor = "darkgreen";
     topRight.style.backgroundColor = "darkred";
     bottomLeft.style.backgroundColor = "goldenrod";
     bottomRight.style.backgroundColor = "darkblue";
 }
+
+//setting color for when pattern is flashing
 function flashColor() {
     topLeft.style.backgroundColor = "lightgreen";
     topRight.style.backgroundColor = "tomato";
     bottomLeft.style.backgroundColor = "yellow";
     bottomRight.style.backgroundColor = "lightskyblue";
 }
-topLeft.addEventListener('click', (event) => {
-    if (on) {
-        playerOrder.push(1);
-        check();
-        one();
-        if(!win) {
-            setTimeout(() => {
-                clearColor();
-            }, 300);
-        }
-    }
-})
-topRight.addEventListener('click', (event) => {
-    if (on) {
-        playerOrder.push(2);
-        check();
-        two();
-        if(!win) {
-            setTimeout(() => {
-                clearColor();
-            }, 300);
-        }
-    }
-})
-bottomLeft.addEventListener('click', (event) => {
-    if (on) {
-        playerOrder.push(3);
-        check();
-        three();
-        if(!win) {
-            setTimeout(() => {
-                clearColor();
-            }, 300);
-        }
-    }
-})
-bottomRight.addEventListener('click', (event) => {
-    if (on) {
-        playerOrder.push(4);
-        check();
-        four();
-        if(!win) {
-            setTimeout(() => {
-                clearColor();
-            }, 300);
-        }
-    }
-})
+
+//function is checking ig what user clicked back is what the game showed them, seeing is arrays are matching, if they dont game ends
 function check() {
     if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
         good = false;
@@ -210,6 +152,8 @@ function check() {
     }
 
 }
+
+//function that kicks in when you have completed all levels of the game
 function winGame() {
     flashColor();
     turnCounter.innerHTML = "WIN!";
@@ -217,6 +161,81 @@ function winGame() {
     win = true;
 }
 
+// ALL EVENT-LISTENERS FOR GAME
+
+//next 4 are for each color section, listening for the click, changing color , and feeding into check to see if clicks match
+topLeft.addEventListener('click', (e) => {
+    if (on) {
+        playerOrder.push(1);
+        check();
+        one();
+        if(!win) {
+            setTimeout(() => {
+                clearColor();
+            }, 100);
+        }
+    }
+})
+topRight.addEventListener('click', (e) => {
+    if (on) {
+        playerOrder.push(2);
+        check();
+        two();
+        if(!win) {
+            setTimeout(() => {
+                clearColor();
+            }, 100);
+        }
+    }
+})
+bottomLeft.addEventListener('click', (e) => {
+    if (on) {
+        playerOrder.push(3);
+        check();
+        three();
+        if(!win) {
+            setTimeout(() => {
+                clearColor();
+            }, 100);
+        }
+    }
+})
+bottomRight.addEventListener('click', (e) => {
+    if (on) {
+        playerOrder.push(4);
+        check();
+        four();
+        if(!win) {
+            setTimeout(() => {
+                clearColor();
+            }, 100);
+        }
+    }
+})
+
+strictButton.addEventListener('click', (e) => {
+    strict = strictButton.checked === true;
+});
+
+// this is for the on button, setting display for when turned on
+onButton.addEventListener('click', (e) => {
+    if (onButton.checked === true) {
+        on = true;
+        turnCounter.innerHTML = "-";
+    } else {
+        on = false;
+        turnCounter.innerHTML = "";
+        clearColor();
+        clearInterval(intervalId);
+    }
+});
+
+//this is for the start button , starting the game
+startButton.addEventListener('click', (e) => {
+    if (on || win) {
+        play();
+    }
+});
 
 
 
