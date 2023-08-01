@@ -10,6 +10,7 @@ let strict = false;
 let noise = true;
 let on = false;
 let win;
+
 //const for event listeners
 const turnCounter = document.querySelector("#turn");
 const topLeft = document.querySelector("#topLeft");
@@ -39,6 +40,7 @@ function play() {
 
     intervalId = setInterval(gameTurn, 800);
 }
+
 //function is working when its the games turn to make a pattern so user cant click colors as they are being shown, NO CHEATING
 function gameTurn() {
     on = false;
@@ -71,6 +73,7 @@ function one() {
     noise = true;
     topLeft.style.backgroundColor = "lightgreen";
 }
+
 function two() {
     if (noise) {
         let audio = document.getElementById("clip2");
@@ -79,6 +82,7 @@ function two() {
     noise = true;
     topRight.style.backgroundColor = "tomato";
 }
+
 function three() {
     if (noise) {
         let audio = document.getElementById("clip3");
@@ -87,6 +91,7 @@ function three() {
     noise = true;
     bottomLeft.style.backgroundColor = "yellow";
 }
+
 function four() {
     if (noise) {
         let audio = document.getElementById("clip4");
@@ -161,81 +166,81 @@ function winGame() {
     win = true;
 }
 
+
 // ALL EVENT-LISTENERS FOR GAME
-
-//next 4 are for each color section, listening for the click, changing color , and feeding into check to see if clicks match
-topLeft.addEventListener('click', (e) => {
-    if (on) {
-        playerOrder.push(1);
-        check();
-        one();
-        if(!win) {
-            setTimeout(() => {
-                clearColor();
-            }, 100);
+(() => { // main method
+    onButton.checked = false;
+    // this is for the on button, setting display for when turned on
+    onButton.addEventListener('click', (e) => {
+        if (onButton.checked === true) {
+            on = true;
+            turnCounter.innerHTML = "-";
+        } else {
+            on = false;
+            turnCounter.innerHTML = "";
+            clearColor();
+            clearInterval(intervalId);
         }
-    }
-})
-topRight.addEventListener('click', (e) => {
-    if (on) {
-        playerOrder.push(2);
-        check();
-        two();
-        if(!win) {
-            setTimeout(() => {
-                clearColor();
-            }, 100);
+    });
+    //next 4 are for each color section, listening for the click, changing color , and feeding into check to see if clicks match
+
+    topLeft.addEventListener('click', (e) => {
+        if (on) {
+            playerOrder.push(1);
+            check();
+            one();
+            if (!win) {
+                setTimeout(() => {
+                    clearColor();
+                }, 100);
+            }
         }
-    }
-})
-bottomLeft.addEventListener('click', (e) => {
-    if (on) {
-        playerOrder.push(3);
-        check();
-        three();
-        if(!win) {
-            setTimeout(() => {
-                clearColor();
-            }, 100);
+    });
+    topRight.addEventListener('click', (e) => {
+        if (on) {
+            playerOrder.push(2);
+            check();
+            two();
+            if (!win) {
+                setTimeout(() => {
+                    clearColor();
+                }, 100);
+            }
         }
-    }
-})
-bottomRight.addEventListener('click', (e) => {
-    if (on) {
-        playerOrder.push(4);
-        check();
-        four();
-        if(!win) {
-            setTimeout(() => {
-                clearColor();
-            }, 100);
+    });
+    bottomLeft.addEventListener('click', (e) => {
+        if (on) {
+            playerOrder.push(3);
+            check();
+            three();
+            if (!win) {
+                setTimeout(() => {
+                    clearColor();
+                }, 100);
+            }
         }
-    }
-})
+    });
+    bottomRight.addEventListener('click', (e) => {
+        if (on) {
+            playerOrder.push(4);
+            check();
+            four();
+            if (!win) {
+                setTimeout(() => {
+                    clearColor();
+                }, 100);
+            }
+        }
+    });
+    strictButton.addEventListener('click', (e) => {
+        strict = strictButton.checked === true;
+    });
+    //this is for the start button , starting the game
+    startButton.addEventListener('click', (e) => {
+        if (on || win) {
+            play();
+        }
+    });
 
-strictButton.addEventListener('click', (e) => {
-    strict = strictButton.checked === true;
-});
-
-// this is for the on button, setting display for when turned on
-onButton.addEventListener('click', (e) => {
-    if (onButton.checked === true) {
-        on = true;
-        turnCounter.innerHTML = "-";
-    } else {
-        on = false;
-        turnCounter.innerHTML = "";
-        clearColor();
-        clearInterval(intervalId);
-    }
-});
-
-//this is for the start button , starting the game
-startButton.addEventListener('click', (e) => {
-    if (on || win) {
-        play();
-    }
-});
-
-
+})();
 
