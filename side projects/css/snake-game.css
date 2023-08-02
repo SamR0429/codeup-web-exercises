@@ -8,6 +8,7 @@ body {
     color: green;
 }
 
-.title{
+h1{
     font-family: 'Handjet', 'sans-serif';
+    font-size: 4rem;
 }

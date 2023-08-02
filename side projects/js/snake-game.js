@@ -1,6 +1,6 @@
 let blockSize = 20; //size of the game layout
-let total_row = 17; //total row number, size of the bg horizontally
-let total_col = 17; //total column number, size of the bg vertically
+let total_row = 30; //total row number, size of the bg horizontally
+let total_col = 30; //total column number, size of the bg vertically
 let board; //declared variable for later in the code
 let context; //declared variable for later in the code
 
@@ -74,7 +74,10 @@ function update() {
         // Out of bound condition
         gameOver = true;
         alert("Game Over");
+        // alert("try again?");
+        // this works with a popup alert but i dont know how to get it to refresh page when its clicked
     }
+
 
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX === snakeBody[i][0] && snakeY === snakeBody[i][1]) {
@@ -82,6 +85,8 @@ function update() {
             // Snake eats own body
             gameOver = true;
             alert("Game Over");
+            // alert("try again?");
+            // this works with a popup alert but i dont know how to get it to refresh page when its clicked
         }
     }
 }
@@ -120,3 +125,17 @@ function placeFood() {
     //in y coordinates.
     foodY = Math.floor(Math.random() * total_row) * blockSize;
 }
+
+
+
+
+
+
+
+const refreshPage = document.querySelector('.refresh');
+refreshPage.addEventListener('click', ()=>{
+    window.location.reload();
+})
+
+// setTimeout(function() { alert("hi"); }, 1800);
+//this is a timer i could potential user for the popup for the game over
